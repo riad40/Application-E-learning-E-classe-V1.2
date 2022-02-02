@@ -45,7 +45,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add new student</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -54,28 +54,22 @@
                   <input class="form-control mb-3" type="hidden" id="id" name="id">
                 </div>
                 <div>
-                  <input class="form-control mb-3" type="hidden" id="image" name="image">
-                </div>
-                <div>
-                  <label class="form-labe mb-2" for="name">Name</label>
+                  <label class="form-labe mb-2" for="course name">Course name</label>
                   <input class="form-control mb-3" type="text" id="name" name="name" required>
                 </div>
                 <div>
-                  <label class="form-labe mb-2" for="email">Email</label>
-                  <input class="form-control mb-3" type="email" id="email" name="email" required>
+                  <label class="form-labe mb-2" for="course duration">Course duration</label>
+                  <input class="form-control mb-3" type="text" id="duration" name="duration" required>
                 </div>
                 <div>
-                  <label class="form-labe mb-2" for="phone">Phone Number</label>
-                  <input class="form-control mb-3" type="number" id="phone" name="phone" required>
+                  <label class="form-labe mb-2" for="assigned by">Assigned by</label>
+                  <input class="form-control mb-3" type="text" id="assigned-by" name="assignedBy" required>
                 </div>
                 <div>
-                  <label class="form-labe mb-2" for="enroll">Enroll Number</label>
-                  <input class="form-control mb-3" type="number" id="enroll" name="enroll" required>
+                  <label class="form-labe mb-2" for="enroll">Assigned at</label>
+                  <input class="form-control mb-3" type="datetime-local" id="assigned-at" name="assignedAt" required>
                 </div>
                 <div>
-                  <label class="form-labe mb-2" for="date">Date Of Admession</label>
-                  <input class="form-control mb-3" type="date" id="date" name="date">
-                </div>
                 <input type="submit" name="save" class="btn btn-info my-2 text-light" value="Add">
               </form>
             </div>
