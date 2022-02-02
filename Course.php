@@ -98,19 +98,19 @@
             <tbody>
               <tr>
                 <th></th>
-                <td style="padding: 15px 5px !important;">html&css course</td>
-                <td style="padding: 15px 5px !important;">2hours</td>
-                <td style="padding: 15px 5px !important;">Ahmed</td>
-                <td style="padding: 15px 5px !important;">2:30pm</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">html&css course</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">2hours</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">2:30pm</td>
                 <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
                 <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
               </tr>
               <tr>
                 <th></th>
-                <td style="padding: 15px 5px !important;">php course</td>
-                <td style="padding: 15px 5px !important;">3hours</td>
-                <td style="padding: 15px 5px !important;">Ahmed</td>
-                <td style="padding: 15px 5px !important;">8:00am</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">php course</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">3hours</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
+                <td style="padding: 15px 5px !important; white-space: nowrap !important;">8:00am</td>
                 <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
                 <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
               </tr>
