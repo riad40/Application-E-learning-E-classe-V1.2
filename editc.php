@@ -38,9 +38,6 @@
   <div class="d-flex align-items-center justify-content-center vh-100">
   <form method="POST">
   <h1 class="h3 mb-3">Edit informations</h1>
-  <div>
-    <input type="hidden" id='id' name='id'>
-  </div>
     <div>
       <label class="form-labe mb-2" for="name">Course Name</label>
       <input class="form-control mb-3" type="text" id="name" name="name" value="<?php echo $name; ?>">
@@ -68,7 +65,7 @@
             $assigned_by = $_POST['assignedBy'];
             $assigned_at = $_POST['assignedAt'];
       
-            $edit = "UPDATE course SET namee = '$namee', duration = '$duration', assigned_by='$assignedBy', assigned_at='$assigned_at' WHERE id = $id";
+            $edit = "UPDATE course SET namee = '$namee', duration = '$duration', assigned_by='$assigned_by', assigned_at='$assigned_at' WHERE id = $id";
             $res = mysqli_query($con, $edit);
             echo "
             <script>
