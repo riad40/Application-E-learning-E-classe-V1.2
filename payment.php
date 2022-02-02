@@ -36,48 +36,55 @@
 
         <div>
           <img src="./images/sort.svg" class="px-2" alt="sort" />
+          <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            ADD NEW PAYMENT
+          </button>
         </div>
       </div>
+
+      <!-- Modal -->
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add new payment</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="POST">
+                <div>
+                  <label class="form-labe mb-2" for="name">Name</label>
+                  <input class="form-control mb-3" type="text" id="name" name="name" required>
+                </div>
+                <div>
+                  <label class="form-labe mb-2" for="pyament">Pyament Schedule</label>
+                  <input class="form-control mb-3" type="text" id="pyament" name="pyament" required>
+                </div>
+                <div>
+                  <label class="form-labe mb-2" for="bil number">Bill Number</label>
+                  <input class="form-control mb-3" type="number" id="bill" name="bill" required>
+                </div>
+                <div>
+                  <label class="form-labe mb-2" for="amount paid">Amount Paid</label>
+                  <input class="form-control mb-3" type="text" id="amountp" name="amountp" required>
+                </div>
+                <div>
+                  <label class="form-labe mb-2" for="date">Balance amount</label>
+                  <input class="form-control mb-3" type="text" id="bamount" name="bamount">
+                </div>
+                <div>
+                  <label class="form-labe mb-2" for="date">Dtae</label>
+                  <input class="form-control mb-3" type="date" id="date" name="date">
+                </div>
+                <input type="submit" name="save" class="btn btn-info my-2 text-light" value="Add">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
       <div class="tables">
-        <hr />
-
-          <?php
-
-  $persons = [
-    array(
-      'name' => 'karthi',
-      'payment_schedule' => 'First',
-      'bill_number' => '00012223',
-      'amount_paid' => 'DHS100,000',
-      'balance_amount' => 'DHS500,000',
-      'date' => '05-Jan, 2022'
-    ),
-    array(
-      'name' => 'karthi',
-      'payment_schedule' => 'First',
-      'bill_number' => '00012223',
-      'amount_paid' => 'DHS100,000',
-      'balance_amount' => 'DHS500,000',
-      'date' => '05-Jan, 2022'
-    ),
-    array(
-      'name' => 'karthi',
-      'payment_schedule' => 'First',
-      'bill_number' => '00012223',
-      'amount_paid' => 'DHS100,000',
-      'balance_amount' => 'DHS500,000',
-      'date' => '05-Jan, 2022'
-    ),
-    array(
-      'name' => 'karthi',
-      'payment_schedule' => 'First',
-      'bill_number' => '00012223',
-      'amount_paid' => 'DHS100,000',
-      'balance_amount' => 'DHS500,000',
-      'date' => '05-Jan, 2022'
-    )
-  ];
-  ?>
         <table class="table table-responsive table-borderless">
           <thead class="text-secondary fw-lighter">
             <tr>
@@ -91,21 +98,58 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach($persons as $person) { ?>
             <tr class="my-table1 mx-4">
               <th></th>
-              <th class="py-3 fw-normal"><?php echo $person['name']; ?></th>
-              <td class="p-3"><?php echo $person['payment_schedule']; ?></td>
-              <td class="py-3"><?php echo $person['bill_number']; ?></td>
-              <td class="py-3" style="white-space: nowrap !important;"><?php echo $person['amount_paid']; ?></td>
-              <td class="py-3" style="white-space: nowrap !important;"><?php echo $person['balance_amount']; ?></td>
-              <td class="py-3" style="white-space: nowrap !important;"><?php echo $person['date']; ?></td>
+              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
+              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
               <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
             </tr>
-            <?php } ?>
+            <tr class="my-table1 mx-4">
+              <th></th>
+              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
+              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
+              <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
+            </tr>
+            <tr class="my-table1 mx-4">
+              <th></th>
+              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
+              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
+              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
+              <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </div>
 
