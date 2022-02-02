@@ -77,6 +77,47 @@
       </div>
     </div>
     <hr />
+    <?php
+
+        // connect to database
+
+        $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
+
+        // check connection 
+
+        if (!$con) {
+          echo 'connection error : '. mysqli_connect_error();
+        }
+
+        // write query for all students
+
+        $sql = 'SELECT * FROM course'; 
+
+        // make query & get result
+
+        $res = mysqli_query($con, $sql);
+
+        // fetch the resulting rows as an array
+        $courses = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
+        if (isset($_POST['save'])) {
+          $namee = $_POST['name'];
+          $duration = $_POST['duration'];
+          $assigned_by = $_POST['assignedBy'];
+          $assigned_at = $_POST['assignedAt'];
+
+          $add = "INSERT INTO course (namee, duration, assigned_by, assigned_at) VALUES('$namee', '$duration', ' $assigned_by', ' $assigned_at')";
+
+          $res = $con -> query($add);
+
+          echo "
+          <script>
+          window.location.href = 'Course.php';
+          </script>";
+            
+        }
+
+?>
     <div class="mx-5 tables">
       <table class="table table-borderless table-responsive table-striped">
         <thead>
@@ -88,25 +129,20 @@
             <th style="white-space: nowrap !important;">Assigned At</th>
           </tr>
         </thead>
+        <?php
+          foreach($courses as $course){
+        ?>
         <tbody>
           <tr>
             <th></th>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">html&css course</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">2hours</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">2:30pm</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['namee'] ?></td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['duration'] ?></td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_by'] ?></td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_at'] ?></td>
             <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
             <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
           </tr>
-          <tr>
-            <th></th>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">php course</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">3hours</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
-            <td style="padding: 15px 5px !important; white-space: nowrap !important;">8:00am</td>
-            <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
-            <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
-          </tr>
+          <?php } ?>
         </tbody>
       </table>
     </div>
