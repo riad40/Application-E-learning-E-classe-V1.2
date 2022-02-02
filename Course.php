@@ -12,7 +12,6 @@
   body {
     background: #f8f8f8;
   }
-
   </style>
 </head>
 
@@ -33,7 +32,7 @@
 
       <div class="mx-4 py-3 d-flex align-items-center justify-content-between my-nav">
         <h3>Course List</h3>
-          <div>
+        <div>
           <img src="./images/sort.svg" class="px-2" alt="sort" />
           <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
             ADD NEW COURSE
@@ -50,7 +49,7 @@
             </div>
             <div class="modal-body">
               <form method="POST">
-              <div>
+                <div>
                   <input class="form-control mb-3" type="hidden" id="id" name="id">
                 </div>
                 <div>
@@ -70,57 +69,60 @@
                   <input class="form-control mb-3" type="datetime-local" id="assigned-at" name="assignedAt" required>
                 </div>
                 <div>
-                <input type="submit" name="save" class="btn btn-info my-2 text-light" value="Add">
+                  <input type="submit" name="save" class="btn btn-info my-2 text-light" value="Add">
               </form>
             </div>
           </div>
         </div>
       </div>
-      <hr />
+    </div>
+    <hr />
+    <div class="mx-5 tables">
+      <table class="table table-borderless table-responsive table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th style="white-space: nowrap !important;">Assigned By</th>
+            <th style="white-space: nowrap !important;">Assigned At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">html&css course</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">2hours</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">2:30pm</td>
+            <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
+            <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">php course</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">3hours</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
+            <td style="padding: 15px 5px !important; white-space: nowrap !important;">8:00am</td>
+            <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
+            <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <div class="mx-5 tables">
-        <table class="table table-borderless table-responsive table-striped">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Duration</th>
-                <th style="white-space: nowrap !important;">Assigned By</th>
-                <th style="white-space: nowrap !important;">Assigned At</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th></th>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">html&css course</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">2hours</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">2:30pm</td>
-                <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
-                <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
-              </tr>
-              <tr>
-                <th></th>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">php course</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">3hours</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">Ahmed</td>
-                <td style="padding: 15px 5px !important; white-space: nowrap !important;">8:00am</td>
-                <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
-                <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
+    <script src="./js/bootstrap.js"></script>
 
-  <script src="./js/bootstrap.js"></script>
+    <script>
+    var element = document.getElementById("page");
+    var toggleButton = document.getElementById("menu-toggle");
+    toggleButton.onclick = function() {
+      element.classList.toggle("toggled");
+    };
+    </script>
 
-  <script>
-  var element = document.getElementById("page");
-  var toggleButton = document.getElementById("menu-toggle");
-  toggleButton.onclick = function() {
-    element.classList.toggle("toggled");
-  };
-  </script>
+
 
 </body>
+
 </html>
