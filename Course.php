@@ -66,7 +66,7 @@
                 </div>
                 <div>
                   <label class="form-labe mb-2" for="enroll">Assigned at</label>
-                  <input class="form-control mb-3" type="datetime-local" id="assigned-at" name="assignedAt" required>
+                  <input class="form-control mb-3" type="date" id="assigned-at" name="assignedAt" required>
                 </div>
                 <div>
                   <input type="submit" name="save" class="btn btn-info my-2 text-light" value="Add">
@@ -139,8 +139,8 @@
             <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['duration'] ?></td>
             <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_by'] ?></td>
             <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_at'] ?></td>
-            <td style="padding: 5px !important;"><a href="" class="btn btn-primary text-light"> Edit </a></td>
-            <td style="padding: 5px !important;"><a href="" class="btn btn-danger text-light"> Delete </a></td>
+            <?php echo '<td style="padding: 5px !important;"><a href="editc.php?id='.$course['id'].'" class="btn btn-primary text-light"> Edit </a></td>'; ?>
+            <?php echo '<td style="padding: 5px !important;"><a href="removec.php?id='.$course['id'].'" class="btn btn-danger text-light"> Delete </a></td>'; ?>
           </tr>
           <?php } ?>
         </tbody>

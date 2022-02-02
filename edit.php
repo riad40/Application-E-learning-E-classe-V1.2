@@ -12,7 +12,12 @@
   </style>
 </head>
 
-<?php
+
+ 
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html><?php
     $id = $_GET['id'];
     // connect to database
     $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
@@ -80,8 +85,3 @@
           }  
 
     ?>
- 
-<script src="js/bootstrap.js"></script>
-
-</body>
-</html>
