@@ -67,11 +67,11 @@
                 </div>
                 <div>
                   <label class="form-labe mb-2" for="amount paid">Amount Paid</label>
-                  <input class="form-control mb-3" type="text" id="amountp" name="amountp" required>
+                  <input class="form-control mb-3" type="number" id="amountp" name="amountp" required>
                 </div>
                 <div>
                   <label class="form-labe mb-2" for="date">Balance amount</label>
-                  <input class="form-control mb-3" type="text" id="bamount" name="bamount">
+                  <input class="form-control mb-3" type="number" id="bamount" name="bamount">
                 </div>
                 <div>
                   <label class="form-labe mb-2" for="date">Dtae</label>
@@ -84,6 +84,48 @@
         </div>
       </div>
       <hr />
+      <?php
+
+            // connect to database
+
+            $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
+
+            // check connection 
+
+            if (!$con) {
+              echo 'connection error : '. mysqli_connect_error();
+            }
+
+            // write query for all students
+
+            $sql = 'SELECT * FROM payments_details'; 
+
+            // make query & get result
+
+            $res = mysqli_query($con, $sql);
+
+            // fetch the resulting rows as an array
+            $persons = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
+            if (isset($_POST['save'])) {
+              $namee = $_POST['name'];
+              $payment_schedule = $_POST['pyament'];
+              $bill_number = $_POST['bill'];
+              $amount_paid = $_POST['amountp'];
+              $balance_amount = $_POST['bamount'];
+              $datee = $_POST['date']; 
+    
+              $add = "INSERT INTO payments_details VALUES(NULL, '$namee', '$payment_schedule', '$bill_number', '$amount_paid', '$balance_amount', '$datee')";
+    
+              $res = mysqli_query($con, $add);
+    
+              echo "
+              <script>
+              window.location.href = 'payment.php';
+              </script>";
+                
+            }
+            ?>
       <div class="tables">
         <table class="table table-responsive table-borderless">
           <thead class="text-secondary fw-lighter">
@@ -98,36 +140,18 @@
             </tr>
           </thead>
           <tbody>
+            <?php foreach($persons as $person){ ?>
             <tr class="my-table1 mx-4">
               <th></th>
-              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
-              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
+              <th class="py-3 fw-normal" style="white-space: nowrap !important;"><?php echo $person['namee']; ?></th>
+              <td class="p-3" style="white-space: nowrap !important;"><?php echo $person['payment_schedule']; ?></td>
+              <td class="py-3" style="white-space: nowrap !important;"><?php echo $person['bill_number']; ?></td>
+              <td class="py-3" style="white-space: nowrap !important;"><?php echo 'DHS'. $person['amount_paid']; ?></td>
+              <td class="py-3" style="white-space: nowrap !important;"><?php echo 'DHS'. $person['balance_amount']; ?></td>
+              <td class="py-3" style="white-space: nowrap !important;"><?php echo $person['datee']; ?></td>
               <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
             </tr>
-            <tr class="my-table1 mx-4">
-              <th></th>
-              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
-              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
-              <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
-            </tr>
-            <tr class="my-table1 mx-4">
-              <th></th>
-              <th class="py-3 fw-normal" style="white-space: nowrap !important;">XXXXXX</th>
-              <td class="p-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXXXX</td>
-              <td class="py-3" style="white-space: nowrap !important;">XXXXXXXXXXXXXX</td>
-              <td class="py-3"><img src="./images/eye.svg" alt="eye" /></td>
-            </tr>
+            <?php } ?>
           </tbody>
         </table>
       </div>
