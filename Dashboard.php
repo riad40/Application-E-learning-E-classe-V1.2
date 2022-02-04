@@ -26,20 +26,48 @@
       <div id="content" class="container-fluid">
         
         <?php include './php/navbar.php'?>
+
+        <?php
+
+            $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
+
+            // check connection 
+
+            if (!$con) {
+              echo 'connection error : '. mysqli_connect_error();
+            }
+
+        ?>
          
         <div class="row mt-4 px-3">
           <div class="col my-3">
             <ul class="card1 rounded p-3" style="min-width: 255px; list-style: none;">
               <li><img src="./images/graduation.svg" alt="graduation" /></li>
               <li class="py-2">Students</li>
-              <li class="text-end fw-bold fs-2 pt-3">243</li>
+              <li class="text-end fw-bold fs-2 pt-3">
+                <?php  
+                // write query for all students
+                $sql = 'SELECT * FROM studentsinfo'; 
+                // make query & get result
+                $res = mysqli_query($con, $sql);
+                $blocks = mysqli_num_rows($res);
+                echo $blocks;  
+                ?></li>
             </ul>
           </div>
           <div class="col my-3">
             <ul class="card2 rounded p-3" style="min-width: 255px; list-style: none;">
               <li><img src="./images/save.svg" alt="save" /></li>
               <li class="py-2">Course</li>
-              <li class="text-end fw-bold fs-2 pt-3">13</li>
+              <li class="text-end fw-bold fs-2 pt-3">               
+                <?php 
+                // write query for all students
+                $sql = 'SELECT * FROM course'; 
+                // make query & get result
+                $res = mysqli_query($con, $sql);
+                $blocks = mysqli_num_rows($res);
+                echo $blocks;  
+                ?></li>
             </ul>
           </div>
           <div class="col my-3">
@@ -47,7 +75,15 @@
               <li><img src="./images/dollar.svg" alt="dollar" /></li>
               <li class="py-2">Payments</li>
               <li class="text-end fw-bold fs-2 pt-3">
-                <span class="fs-4 px-2">DHS</span>556,000
+                <span class="fs-4 px-2">DHS</span>
+              <?php
+                // write query for all students
+                $sql = 'SELECT SUM(balance_amount) FROM payments_details'; 
+                // make query & get result
+                $res = mysqli_query($con, $sql);
+                $col = mysqli_fetch_assoc($res);
+                echo $col['SUM(balance_amount)'];
+              ?>
               </li>
             </ul>
           </div>
