@@ -46,9 +46,7 @@
               <li class="py-2">Students</li>
               <li class="text-end fw-bold fs-2 pt-3">
                 <?php  
-                // write query for all students
                 $sql = 'SELECT * FROM studentsinfo'; 
-                // make query & get result
                 $res = mysqli_query($con, $sql);
                 $blocks = mysqli_num_rows($res);
                 echo $blocks;  
@@ -61,9 +59,7 @@
               <li class="py-2">Course</li>
               <li class="text-end fw-bold fs-2 pt-3">               
                 <?php 
-                // write query for all students
                 $sql = 'SELECT * FROM course'; 
-                // make query & get result
                 $res = mysqli_query($con, $sql);
                 $blocks = mysqli_num_rows($res);
                 echo $blocks;  
@@ -77,9 +73,7 @@
               <li class="text-end fw-bold fs-2 pt-3">
                 <span class="fs-4 px-2">DHS</span>
               <?php
-                // write query for all students
                 $sql = 'SELECT SUM(balance_amount) FROM payments_details'; 
-                // make query & get result
                 $res = mysqli_query($con, $sql);
                 $col = mysqli_fetch_assoc($res);
                 echo $col['SUM(balance_amount)'];

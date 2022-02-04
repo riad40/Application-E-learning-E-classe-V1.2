@@ -7,25 +7,13 @@
   
           if (!$con) {
             echo 'connection error : '. mysqli_connect_error();
-          }
-      
-          // write query for all students
-  
-          $sql = 'SELECT * FROM studentsinfo'; 
-  
-          // make query & get result
-  
+          }  
+          $sql = 'SELECT * FROM studentsinfo';   
           $res = mysqli_query($con, $sql);
-  
-          // fetch the resulting rows as an array
           $courses = mysqli_fetch_all($res, MYSQLI_ASSOC);
-
           $id = $_GET['id'];
-
           $remove = "DELETE FROM course WHERE id = $id";
-
           $res = $con -> query($remove);
-  
           echo "
             <script>
             window.location.href = 'Course.php';

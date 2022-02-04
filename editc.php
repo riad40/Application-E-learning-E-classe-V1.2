@@ -20,11 +20,8 @@
     if (!$con) {
       echo 'connection error : '. mysqli_connect_error();
     }       
-    // write query for all students
     $sql = "SELECT * FROM course WHERE id = $id "; 
-    // make query & get result
     $resu = mysqli_query($con, $sql);
-    // fetch the resulting rows as an array
     $courses = mysqli_fetch_array($resu, MYSQLI_ASSOC);
     
     $name = $courses['namee'];
