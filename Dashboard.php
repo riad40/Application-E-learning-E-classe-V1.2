@@ -19,26 +19,17 @@
   <div class="d-flex" id="page">  
 
     <?php
-      include './php/sidebar.php'
+      include './includes/sidebar.php'
     ?>
 
       <!-- Page Content -->
       <div id="content" class="container-fluid">
         
-        <?php include './php/navbar.php'?>
-
-        <?php
-
-            $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
-
-            // check connection 
-
-            if (!$con) {
-              echo 'connection error : '. mysqli_connect_error();
-            }
-
+        <?php 
+        include './includes/navbar.php';
+        include './includes/db_conn.php';
         ?>
-         
+
         <div class="row mt-4 px-3">
           <div class="col my-3">
             <ul class="card1 rounded p-3" style="min-width: 255px; list-style: none;">

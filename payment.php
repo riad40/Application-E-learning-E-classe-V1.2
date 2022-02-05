@@ -20,14 +20,15 @@
   <div class="d-flex" id="page">
 
     <?php
-    include './php/sidebar.php'
+    include './includes/sidebar.php'
   ?>
 
     <!-- Page Content -->
     <div id="content" class="container-fluid">
 
       <?php
-      include './php/navbar.php'
+      include './includes/navbar.php';
+      include './includes/db_conn.php';
     ?>
 
       <div class="mx-4 py-3 d-flex align-items-center justify-content-between">

@@ -20,15 +20,16 @@
   <div class="d-flex" id="page">
 
     <?php
-      include './php/sidebar.php'
+      include './includes/sidebar.php'
     ?>
 
     <!-- Page Content -->
     <div id="content" class="container-fluid">
 
       <?php
-      include './php/navbar.php'
-    ?>
+      include './includes/navbar.php';
+      include './includes/db_conn.php';
+      ?>
 
       <div class="mx-4 py-3 d-flex align-items-center justify-content-between my-nav">
         <h3>Course List</h3>
@@ -78,16 +79,6 @@
     </div>
     <hr />
     <?php
-
-        // connect to database
-
-        $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
-
-        // check connection 
-
-        if (!$con) {
-          echo 'connection error : '. mysqli_connect_error();
-        }
         $sql = 'SELECT * FROM course'; 
         $res = mysqli_query($con, $sql);
         $courses = mysqli_fetch_all($res, MYSQLI_ASSOC);

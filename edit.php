@@ -14,12 +14,7 @@
 
 <?php
     $id = $_GET['id'];
-    // connect to database
-    $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
-    // check connection 
-    if (!$con) {
-      echo 'connection error : '. mysqli_connect_error();
-    }       
+    include './includes/db_conn.php';     
     $sql = "SELECT * FROM studentsinfo WHERE id = $id "; 
     $resu = mysqli_query($con, $sql);
     $students = mysqli_fetch_array($resu, MYSQLI_ASSOC);
