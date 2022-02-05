@@ -5,7 +5,7 @@
 
 Vous devez donc répondre aux histoires suivantes :
 
--Autant que Développeur backend PHP, je peux créer une base de données nommée e_classe_db
+-Autant que Développeur backend PHP, je peux créer une base de données nommée e_classe_db.
 -Autant que Développeur backend PHP, je peux connecter ma base de données avec l'application web E-Classe.
 -Autant que Développeur backend PHP, je peux ajouter trois tables students, courses et payment_details.
 -Autant que Développeur backend PHP, je peux appliquer le système CRUD (ajouter, afficher, modifier et supprimer) d'une manière dynamique sur les deux tables students et courses.
