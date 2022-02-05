@@ -1,11 +1,13 @@
-# E-LEARNING-APPLICATION-V1.0-E-Classe
+# E-LEARNING-APPLICATION-V1.2-E-Classe
 ## Context du Projet
 
-### Votre équipe de désigne vient de terminer la maquette de l'application E-Classe. En tant que développeur polyvalent, votre mission est d'intégrer la maquette avec un framework CSS de votre choix ainsi d'appliquer le principe **DRY **via le language PHP. Vous devez, donc, répondre aux histoires suivants :
+### Vous êtes un développeur backend, votre équipe a besoin de vous pour enregistrer les données de l'application web E-Classe sur la base de données.
 
-  -  Autant que intégrateur web, je peux réliser l'interface utilisateur statique et adaptable de la maquette fournie par votre équipe désigners avec un **framework **CSS (Bootstrap 5, Tailwind CSS).
-  -  Autant que intégrateur web, je peux m'assurer que l'interface est accessible.
-  -  Autant que intégrateur web, je peux m'assurer que le code est validé via les outils W3C.
-  -  Autant que Développeur PHP, je peux découper les élements (Sidebar, Header et Footer) en des composants PHP.
-  -  Autant que Développeur PHP, je peux stocker la liste des étudiants en un seul tableau associatif et les itérer dans la page web Students.
-  -  Autant que Développeur PHP, je peux stocker les détails des payements en un seul tableau associatif et les itérer dans la page web Payement.
+Vous devez donc répondre aux histoires suivantes :
+
+-Autant que Développeur backend PHP, je peux créer une base de données nommée e_classe_db
+-Autant que Développeur backend PHP, je peux connecter ma base de données avec l'application web E-Classe.
+-Autant que Développeur backend PHP, je peux ajouter trois tables students, courses et payment_details.
+-Autant que Développeur backend PHP, je peux appliquer le système CRUD (ajouter, afficher, modifier et supprimer) d'une manière dynamique sur les deux tables students et courses.
+-Autant que Développeur backend PHP, je peux ajouter et afficher seulement les données de la table payment_details.
+-Autant que Visiteur de l'application, je peux voir les cartes de statistiques sont dynamiques sur la page Dashboard.
