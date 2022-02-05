@@ -97,7 +97,7 @@
 
           $add = "INSERT INTO studentsinfo (namee, email, phone_number, studentsinfo.enroll_number,date_of_admession) VALUES('$namee', '$email', '$phone_number', '$enroll_number', '$date_of_admession')";
 
-          $res = $con -> query($add);
+          $res = mysqli_query($con, $add);
 
           echo "
           <script>
