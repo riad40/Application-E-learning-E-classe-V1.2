@@ -31,7 +31,7 @@
       include './includes/db_conn.php';
     ?>
 
-      <div class="mx-4 py-3 d-flex align-items-center justify-content-between">
+      <div class="mx-4 py-3 d-flex align-items-center justify-content-between my-nav">
 
         <h3>Payment Details</h3>
 
