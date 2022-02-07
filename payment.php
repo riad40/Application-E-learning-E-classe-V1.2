@@ -86,16 +86,6 @@
       </div>
       <hr />
       <?php
-
-            // connect to database
-
-            $con = mysqli_connect('localhost', 'riad', 'wxcAZIZ#@12', 'e-classes-dB');
-
-            // check connection 
-
-            if (!$con) {
-              echo 'connection error : '. mysqli_connect_error();
-            }
             $sql = 'SELECT * FROM payments_details'; 
             $res = mysqli_query($con, $sql);
             $persons = mysqli_fetch_all($res, MYSQLI_ASSOC);
@@ -154,10 +144,10 @@
   <script src="./js/bootstrap.js"></script>
 
   <script>
-  var el = document.getElementById("page");
+  var element = document.getElementById("page");
   var toggleButton = document.getElementById("menu-toggle");
   toggleButton.onclick = function() {
-    el.classList.toggle("toggled");
+    element.classList.toggle("toggled");
   };
   </script>
 
